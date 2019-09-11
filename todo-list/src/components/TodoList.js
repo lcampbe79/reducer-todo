@@ -3,7 +3,7 @@ import Todo from './ToDo.js'
 
 
 const TodoList = props => {
-  console.log("todoList.js", props)
+  console.log("todoList.js: props:", props)
   return(
     <div>
       {props.todo.map(task => (
