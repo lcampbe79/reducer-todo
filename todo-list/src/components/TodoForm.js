@@ -3,32 +3,28 @@ import React, {useState} from 'react';
 function TodoFormList() {
   const [task, setTask] = useState();
   
-  handleChanges = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
+  const handleChanges = event => {
+    setTask({ [event.target.name]: event.target.value});
   }
 
-  submitItem = event => {
+  const submitItem = event => {
     event.preventDefault();
-    this.props.addTask(this.state.task);
-    this.setState({
-      task: ''
-    })
+    //addTask(task);
+    setTask({ task: '' })
   }
 
   return(
-    <form onSubmit={this.submitItem}>
+    <form onSubmit={submitItem}>
       <input 
         type='text'
-        value={this.state.task}
+        value={task}
         name='task'
-        onChange={this.handleChanges}
+        onChange={handleChanges}
       />
       <button >Add Todo</button>
       <button onClick={(e) => {
         e.preventDefault(); 
-        this.props.clearCompleted();
+        //clearCompleted();
       }}>Clear Completed</button>
     </form>
   )

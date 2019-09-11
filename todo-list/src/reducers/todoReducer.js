@@ -1,10 +1,13 @@
 export const initialState = {
-  item: 'Learn about reducers',
-  completed: false,
-  id: 3892987589
+  todoArr: [{
+    item: 'Learn about reducers',
+    completed: false,
+    id: 3892987589
+  }]
+ 
 }
 
-export const titleReducer = (state, action) => {
+export const todoReducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_EDITING":
       return {
